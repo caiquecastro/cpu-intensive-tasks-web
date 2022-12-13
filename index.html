@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <form action="" name="fibonacci">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">How many fibonacci iterations?</span>
+          </label>
+          <input
+            type="text"
+            name="input"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        <button class="btn btn-primary mt-2">Calculate</button>
+      </form>
+
+      <div class="stats shadow">
+
+        <div class="stat">
+          <div class="stat-title">Fibonacci</div>
+          <div class="stat-value" id="result"></div>
+          <div class="stat-desc" id="timing"></div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
