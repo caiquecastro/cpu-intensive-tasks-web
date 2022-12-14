@@ -1,5 +1,5 @@
 function calculateFibonacciRecursive(number) {
-  if (number < 0) {
+  if (Number.isNaN(number) || number < 0) {
     throw new TypeError("Invalid input for fibonacci");
   }
   if (number < 2) {
