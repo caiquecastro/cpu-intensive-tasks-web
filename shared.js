@@ -20,12 +20,14 @@ function cleanResult() {
 }
 
 function showResult(data) {
+  hideSpinner();
   resultBox.classList.remove('hidden');
   resultValue.textContent = data.result;
   timingContainer.textContent = data.time;
 }
 
 function showError(error) {
+  hideSpinner();
   errorContainer.classList.remove('hidden');
   errorContainer.querySelector('span').textContent = error.message;
 }

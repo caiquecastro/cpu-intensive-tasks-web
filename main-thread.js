@@ -17,8 +17,6 @@ form.addEventListener('submit', (e) => {
       });
     } catch (error) {
       showError(error);
-    } finally {
-      hideSpinner();
     }
   }, 1);
 });

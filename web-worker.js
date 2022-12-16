@@ -5,7 +5,6 @@ const worker = new Worker('worker.js');
 worker.addEventListener('message', (e) => {
   console.log('Received message from web worker', e);
 
-  hideSpinner();
   showResult(e.data);
 });
 
