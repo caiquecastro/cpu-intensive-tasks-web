@@ -11,6 +11,7 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/shared.js" defer></script>
     <script src="/web-worker.js" defer></script>
   </head>
   <body>
@@ -31,11 +32,22 @@
         <button class="btn btn-primary mt-2">Calculate</button>
       </form>
 
-      <div class="stats shadow">
+      <div class="radial-progress animate-spin mt-2 hidden" style="--value: 30;" id="loading"></div>
+
+      <div class="alert alert-error shadow-lg mt-2 hidden" id="error-message">
+        <div class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="stats shadow mt-2 hidden" id="result-box">
         <div class="stat">
           <div class="stat-title">Fibonacci</div>
-          <div class="stat-value" id="result"></div>
-          <div class="stat-desc" id="timing"></div>
+          <div class="stat-value" id="result-value"></div>
+          <div class="stat-desc" id="result-timing"></div>
         </div>
       </div>
     </div>
