@@ -9,6 +9,11 @@ worker.addEventListener('message', (e) => {
   showResult(e.data);
 });
 
+worker.addEventListener('error', (error) => {
+  console.log('Received error from web worker', error);
+  showError(error);
+});
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
