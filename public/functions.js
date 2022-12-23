@@ -1,6 +1,6 @@
 function calculateFibonacciRecursive(number) {
   if (Number.isNaN(number) || number < 0) {
-    throw new TypeError("Invalid input for fibonacci");
+    throw new TypeError('Invalid input for fibonacci');
   }
   if (number < 2) {
     return number;
@@ -11,7 +11,7 @@ function calculateFibonacciRecursive(number) {
 
 function calculateFibonacci(number) {
   if (number < 0) {
-    throw new TypeError("Invalid input for fibonacci");
+    throw new TypeError('Invalid input for fibonacci');
   }
 
   let lastButOne = 0;
