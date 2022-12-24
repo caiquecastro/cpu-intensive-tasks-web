@@ -1,12 +1,25 @@
-function calculateFibonacciRecursive(number) {
+const fibonacciCache = new Map();
+
+function calculateFibonacciRecursive(number, { memoize = false } = {}) {
   if (Number.isNaN(number) || number < 0) {
     throw new TypeError('Invalid input for fibonacci');
   }
+
   if (number < 2) {
     return number;
   }
 
-  return calculateFibonacciRecursive(number - 1) + calculateFibonacciRecursive(number - 2);
+  if (memoize && fibonacciCache.has(number)) {
+    return fibonacciCache.get(number);
+  }
+
+  const result = calculateFibonacciRecursive(number - 1) + calculateFibonacciRecursive(number - 2);
+
+  if (memoize) {
+    fibonacciCache.set(number, result);
+  }
+
+  return result;
 }
 
 function calculateFibonacci(number) {
