@@ -13,7 +13,9 @@ function calculateFibonacciRecursive(number, { memoize = false } = {}) {
     return fibonacciCache.get(number);
   }
 
-  const result = calculateFibonacciRecursive(number - 1) + calculateFibonacciRecursive(number - 2);
+  const secondToLast = calculateFibonacciRecursive(number - 2, { memoize });
+  const last = calculateFibonacciRecursive(number - 1, { memoize });
+  const result = last + secondToLast;
 
   if (memoize) {
     fibonacciCache.set(number, result);
