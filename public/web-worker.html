@@ -10,8 +10,22 @@
     <script src="/web-worker.js" defer></script>
   </head>
   <body>
-    <div id="app" class="container mx-auto py-4">
-      <h1 class="text-4xl font-bold mb-3">CPU Intensive Tasks for Web</h1>
+    <div id="app" class="container mx-auto">
+      <header class="navbar bg-neutral text-neutral-content">
+        <div class="flex-1">
+          <h1>
+            <span class="btn btn-ghost normal-case text-xl">
+              CPU Intensive Tasks for Web
+            </span>
+          </h1>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="/">Main thread</a></li>
+            <li><a href="/web-worker.html" class="active">Web Worker</a></li>
+          </ul>
+        </div>
+      </header>
       <form action="" name="fibonacci" class="w-64">
         <div class="form-control w-full max-w-xs">
           <label class="label">
