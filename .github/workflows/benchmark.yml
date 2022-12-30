@@ -11,10 +11,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Check gcc version
+      run: gcc --version
+
     - name: Build C
-      run: |
-        gcc --version
-        gcc scripts/fibonacci.c -o fibonacci.x
+      run: gcc scripts/fibonacci.c -o fibonacci.x
 
     - name: Run script
       run: ./fibonacci.x 55
