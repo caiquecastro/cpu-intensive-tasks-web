@@ -21,7 +21,7 @@ jobs:
       run: gcc scripts/fibonacci.c -o ${{runner.workspace}}/build/fibonacci.x
 
     - name: Run script
-      run: time ${{runner.workspace}}/build/fibonacci.x 30
+      run: time ${{runner.workspace}}/build/fibonacci.x 40
 
   python:
     name: Python Benchmark
@@ -37,4 +37,4 @@ jobs:
         python-version: '3.11'
 
     - name: Run script
-      run: python ${{runner.workspace}}/scripts/fibonacci.py 30
+      run: python scripts/fibonacci.py 30
