@@ -2,6 +2,9 @@ name: Benchmarks
 on:
   - push
 
+env:
+  NUMBER: 40
+
 jobs:
   c:
     name: C Benchmark
@@ -21,7 +24,7 @@ jobs:
       run: gcc scripts/fibonacci.c -o ${{runner.workspace}}/build/fibonacci.x
 
     - name: Run script
-      run: time ${{runner.workspace}}/build/fibonacci.x 40
+      run: time ${{runner.workspace}}/build/fibonacci.x $NUMBER
 
   python:
     name: Python Benchmark
@@ -37,4 +40,20 @@ jobs:
         python-version: '3.11'
 
     - name: Run script
-      run: python scripts/fibonacci.py 30
+      run: python scripts/fibonacci.py $NUMBER
+
+  php:
+    name: PHP Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+
+    - name: Run script
+      run: php scripts/fibonacci.php $NUMBER
