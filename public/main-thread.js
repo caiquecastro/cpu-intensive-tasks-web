@@ -19,5 +19,5 @@ form.addEventListener('submit', (e) => {
     } catch (error) {
       showError(error);
     }
-  }, 1);
+  }, 5);
 });
