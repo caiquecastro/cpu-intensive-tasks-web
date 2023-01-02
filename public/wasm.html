@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Calculator</title>
+    <link rel="stylesheet" href="/dist.css" />
+    <script src="/shared.js" defer></script>
+    <script src="/web-assembly.js" defer></script>
+  </head>
+  <body>
+    <div id="app" class="container mx-auto py-4">
+      <h1 class="text-4xl font-bold mb-3">CPU Intensive Tasks for Web</h1>
+      <form action="" name="fibonacci" class="w-64">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">How many fibonacci iterations?</span>
+          </label>
+          <input
+            type="text"
+            name="input"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">Memoize</span>
+            <input type="checkbox" class="toggle" name="memoize" value="1" checked />
+          </label>
+        </div>
+        <button class="btn btn-primary mt-2">Calculate</button>
+      </form>
+
+      <div class="radial-progress animate-spin mt-2 hidden" style="--value: 30;" id="loading"></div>
+
+      <div class="alert alert-error shadow-lg mt-2 hidden" id="error-message">
+        <div class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="stats shadow mt-2 hidden" id="result-box">
+        <div class="stat">
+          <div class="stat-title">Fibonacci</div>
+          <div class="stat-value" id="result-value"></div>
+          <div class="stat-desc" id="result-timing"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
