@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./public/dist.css",
     "build:watch": "npm run build -- --watch",
-    "dev": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "serve": "serve public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
