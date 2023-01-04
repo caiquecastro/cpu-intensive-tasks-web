@@ -15,12 +15,15 @@ form.addEventListener('submit', (e) => {
 
   cleanResult();
   showSpinner();
-  const startTime = performance.now();
-  const result = wasmObject.instance.exports.fibonacci(input);
-  showResult({
-    result,
-    time: performance.now() - startTime,
-  });
+
+  setTimeout(() => {
+    const startTime = performance.now();
+    const result = wasmObject.instance.exports.fibonacci(input);
+    showResult({
+      result,
+      time: performance.now() - startTime,
+    });
+  }, 5);
 });
 
 
