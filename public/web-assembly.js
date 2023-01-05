@@ -2,7 +2,7 @@ const form = document.forms.fibonacci;
 
 let wasmObject;
 
-WebAssembly.instantiateStreaming(fetch("program.wasm"))
+WebAssembly.instantiateStreaming(fetch("fibonacci.wasm"))
   .then((obj) => {
     wasmObject = obj;
   });
@@ -25,6 +25,3 @@ form.addEventListener('submit', (e) => {
     });
   }, 5);
 });
-
-
-
