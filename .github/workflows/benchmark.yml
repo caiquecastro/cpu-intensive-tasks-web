@@ -25,7 +25,8 @@ jobs:
       run: gcc fibonacci.c -o fibonacci.x
 
     - name: Run script
-      run: time ${{runner.workspace}}/build/fibonacci.x $NUMBER
+      working-directory: scripts/c
+      run: time fibonacci.x $NUMBER
 
   python:
     name: Python Benchmark
