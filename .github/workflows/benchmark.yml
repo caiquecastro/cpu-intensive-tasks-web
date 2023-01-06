@@ -30,7 +30,7 @@ jobs:
 
     - name: Run script
       working-directory: scripts/c
-      run: time fibonacci.x $NUMBER
+      run: time ./fibonacci.x $NUMBER
 
   python:
     name: Python Benchmark
