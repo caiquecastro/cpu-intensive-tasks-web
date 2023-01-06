@@ -21,7 +21,8 @@ jobs:
       run: mkdir ${{runner.workspace}}/build
 
     - name: Build C
-      run: gcc scripts/fibonacci.c -o ${{runner.workspace}}/build/fibonacci.x
+      working-directory: scripts/c
+      run: gcc fibonacci.c -o fibonacci.x
 
     - name: Run script
       run: time ${{runner.workspace}}/build/fibonacci.x $NUMBER
