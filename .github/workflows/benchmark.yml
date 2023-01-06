@@ -62,4 +62,5 @@ jobs:
         php-version: '8.2'
 
     - name: Run script
-      run: php scripts/fibonacci.php $NUMBER
+      working-directory: scripts/php
+      run: php fibonacci.php $NUMBER
