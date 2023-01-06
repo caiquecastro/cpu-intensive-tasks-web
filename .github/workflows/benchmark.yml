@@ -22,11 +22,15 @@ jobs:
 
     - name: Build C
       working-directory: scripts/c
-      run: gcc fibonacci.c -o fibonacci.x
+      run: |
+        pwd
+        ls -la
+        gcc fibonacci.c -o fibonacci.x
+        ls -la
 
     - name: Run script
       working-directory: scripts/c
-      run: time fibonacci.x $NUMBER
+      run: time ./fibonacci.x $NUMBER
 
   python:
     name: Python Benchmark
@@ -58,4 +62,5 @@ jobs:
         php-version: '8.2'
 
     - name: Run script
-      run: php scripts/fibonacci.php $NUMBER
+      working-directory: scripts/php
+      run: php fibonacci.php $NUMBER
