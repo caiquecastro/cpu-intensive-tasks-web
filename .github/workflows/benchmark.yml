@@ -22,7 +22,11 @@ jobs:
 
     - name: Build C
       working-directory: scripts/c
-      run: gcc fibonacci.c -o fibonacci.x
+      run: |
+        pwd
+        ls -la
+        gcc fibonacci.c -o fibonacci.x
+        ls -la
 
     - name: Run script
       working-directory: scripts/c
