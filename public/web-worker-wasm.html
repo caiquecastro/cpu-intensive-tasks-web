@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fibonacci Calculator</title>
-    <link rel="stylesheet" href="/dist.css" />
+    <link rel="stylesheet" href="/dist.css">
+    <script src="/functions.js" defer></script>
     <script src="/shared.js" defer></script>
-    <script src="/web-worker.js" defer></script>
+    <script src="/web-worker-wasm.js" defer></script>
   </head>
   <body>
     <div id="app" class="container mx-auto">
@@ -22,28 +23,29 @@
         <div class="flex-none">
           <ul class="menu menu-horizontal px-1">
             <li><a href="/">Main thread</a></li>
-            <li><a href="/web-worker.html" class="active">Web Worker</a></li>
+            <li><a href="/web-worker.html">Web Worker</a></li>
             <li><a href="/wasm.html">WebAssembly</a></li>
-            <li><a href="/web-worker-wasm.html">WebAssembly on Web Worker</a></li>
+            <li><a href="/web-worker-wasm.html" class="active">WebAssembly on Web Worker</a></li>
           </ul>
         </div>
       </header>
-      <form action="" name="fibonacci" class="w-64">
-        <div class="form-control w-full max-w-xs">
-          <label class="label">
+      <form action="" name="fibonacci" class="w-96 mx-auto">
+        <div class="form-control w-full">
+          <label class="label" for="iterations">
             <span class="label-text">How many fibonacci iterations?</span>
           </label>
           <input
             type="text"
             name="input"
+            id="iterations"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered w-full"
           />
         </div>
         <div class="form-control">
           <label class="label cursor-pointer">
             <span class="label-text">Memoize</span>
-            <input type="checkbox" class="toggle" name="memoize" value="1" checked />
+            <input type="checkbox" class="toggle" name="memoize" value="1" />
           </label>
         </div>
         <button class="btn btn-primary mt-2">Calculate</button>
@@ -60,7 +62,7 @@
         </div>
       </div>
 
-      <div class="stats shadow mt-2 hidden" id="result-box">
+      <div class="stats shadow mt-2 hidden w-64" id="result-box">
         <div class="stat">
           <div class="stat-title">Fibonacci</div>
           <div class="stat-value" id="result-value"></div>
