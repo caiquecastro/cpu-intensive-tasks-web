@@ -46,7 +46,8 @@ jobs:
         python-version: '3.11'
 
     - name: Run script
-      run: python scripts/fibonacci.py $NUMBER
+      working-directory: scripts/python
+      run: python fibonacci.py $NUMBER
 
   php:
     name: PHP Benchmark
