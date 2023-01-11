@@ -2,7 +2,7 @@ importScripts('functions.js');
 
 let wasmObject;
 
-WebAssembly.instantiateStreaming(fetch("fibonacci.wasm"))
+WebAssembly.instantiateStreaming(fetch("fibonacci-long-long.wasm"))
   .then((obj) => {
     wasmObject = obj;
   });
