@@ -65,3 +65,17 @@ jobs:
     - name: Run script
       working-directory: scripts/php
       run: php fibonacci.php $NUMBER
+
+  dotnet:
+    name: .NET Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0'
+    - name: Build script
+      working-directory: scripts/dotnet
+      run: dotnet build
