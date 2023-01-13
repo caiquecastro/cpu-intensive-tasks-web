@@ -7,6 +7,7 @@ const errorContainer = document.querySelector('#error-message');
 function showSpinner() {
   errorContainer.classList.add('hidden');
   resultBox.classList.add('hidden');
+  resultBox.classList.remove('block');
   loading.classList.remove('hidden');
 }
 
@@ -22,6 +23,7 @@ function cleanResult() {
 function showResult(data) {
   hideSpinner();
   resultBox.classList.remove('hidden');
+  resultBox.classList.add('block');
   resultValue.textContent = data.result;
   timingContainer.textContent = data.time;
 }
