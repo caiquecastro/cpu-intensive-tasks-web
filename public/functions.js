@@ -50,3 +50,11 @@ function isPrimeNumber(number) {
 
   return true;
 }
+
+function factorialRecursive(number) {
+  if (number <= 1) {
+    return 1;
+  }
+
+  return number * factorialRecursive(number);
+}
